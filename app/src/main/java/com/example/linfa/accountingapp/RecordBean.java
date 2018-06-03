@@ -1,8 +1,5 @@
 package com.example.linfa.accountingapp;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import java.util.UUID;
 
 /**
@@ -49,20 +46,86 @@ public class RecordBean {
      */
     private String uuid;
 
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public int getType() {
+        if(this.type == RecordType.RECORD_TYPE_EXPENSE){
+            return 1;
+        }else {
+            return 2;
+        }
+    }
+
+    public void setType(int type) {
+
+        if (type == 1){
+            this.type = RecordType.RECORD_TYPE_EXPENSE;
+        }else {
+            this.type = RecordType.RECORD_TYPE_INCCOME;
+        }
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     /**
      * 构造方法
      * 当这个类被实例化后会主动运行这个构造方法
      */
 
+
+
     public RecordBean() {
 
         //生成唯一的uuid
         uuid = UUID.randomUUID().toString();
-        Log.d(TAG, uuid);
         //unix系统时间
         timeStamp = System.currentTimeMillis();
-        //初始化date
-        Log.d(TAG,timeStamp+" "+DateUtil.getFormattedTime(timeStamp));
+        date = DateUtil.getFormattedDate();
+
     }
 
 }

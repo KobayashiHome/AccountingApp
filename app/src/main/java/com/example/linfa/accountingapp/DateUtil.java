@@ -26,9 +26,9 @@ public class DateUtil {
      * 得到今天时间
      * 例如：2018-5-24
      */
-    public static String getFormattedDate(long timeStamp){
+    public static String getFormattedDate(){
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        return format.format(new Date(timeStamp));
+        SimpleDateFormat formatt = new SimpleDateFormat("yyyy-MM-dd");
+        return formatt.format(new Date());
     }
 }

@@ -14,6 +14,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecordBean recordBean = new RecordBean();
-        //Toast.makeText(MainActivity.this,DateUtil.getFormattedTime(recordBean.timeStamp),Toast.LENGTH_SHORT).show();
     }
 }
